@@ -3,7 +3,9 @@ import sys
 import math
 from calculate import calc
 
+
 sys.path.append('/home/egor/geometric_lib')
+
 
 def test_calc_circle_area():
     fig = "circle"
@@ -46,7 +48,6 @@ def test_calc_square_perimeter():
 
 
 def test_calc_invalid_function():
-    # Arrange
     fig = "circle"
     func = "zzz"
     size = [3]
