@@ -26,7 +26,7 @@ jobs:
 
       - name: Print User Info
         run: |
-          echo 'ФИО: $FULL_NAME, Группа: $GROUP_NUMBER, GitHub: $GITHUB_ACTOR'
+          echo "ФИО: $FULL_NAME, Группа: $GROUP_NUMBER, GitHub: $GITHUB_ACTOR"
 
       - name: Setup Python
         uses: actions/setup-python@v5
