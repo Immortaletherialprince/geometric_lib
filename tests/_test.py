@@ -1,46 +1,74 @@
 import pytest
 import sys
+import math
+
 sys.path.append('/home/egor/geometric_lib')
 from calculate import calc
-import math
+
+
 def test_calc_circle_area():
-    a = "circle"
-    b = "area"
-    c = [3]
-    result = calc(a, b, c)
-    assert result == math.pi*3*3
+    fig = "circle"
+    func = "area"
+    size = [3]
+
+    result = calc(fig, func, size)
+
+    assert result == math.pi * 3 * 3
+
 
 def test_calc_square_area():
-    a = "square"
-    b = "area"
-    c = [4]
-    result = calc(a, b, c)
+    fig = "square"
+    func = "area"
+    size = [4]
+
+    result = calc(fig, func, size)
+
     assert result == 16
 
+
 def test_calc_circle_perimeter():
-    a = "circle"
-    b = "perimeter"
-    c = [4]
-    result = calc(a, b, c)
-    assert result == 2* math.pi * 4
+    fig = "circle"
+    func = "perimeter"
+    size = [4]
+
+    result = calc(fig, func, size)
+
+    assert result == 2 * math.pi * 4
+
 
 def test_calc_square_perimeter():
-    a = "square"
-    b = "perimeter"
-    c = [5]
-    result = calc(a, b, c)
+    fig = "square"
+    func = "perimeter"
+    size = [5]
+
+    result = calc(fig, func, size)
+
     assert result == 20
 
+
 def test_calc_invalid_function():
-    a ="circle"
-    b = "zzz"
-    c = [3]
+    # Arrange
+    fig = "circle"
+    func = "zzz"
+    size = [3]
+
     with pytest.raises(AssertionError):
-        calc(a, b, c)
+        calc(fig, func, size)
+
 
 def test_calc_invalid_figure():
-    a = "zzz"
-    b = "area"
-    c = [3]
+    fig = "zzz"
+    func = "area"
+    size = [3]
+
     with pytest.raises(AssertionError):
-        calc(a, b, c)
+        calc(fig, func, size)
+
+
+def test_calc_invalid_size():
+    fig = "circle"
+    func = "area"
+    size = [-3]
+
+    with pytest.raises(ValueError):
+        calc(fig, func, size)
