@@ -16,15 +16,16 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      FULL_NAME: "Иванов Иван Иванович"
-      GROUP_NUMBER: "123456"
+      FULL_NAME: "Моданов Егор Вениаминович"
+      GROUP_NUMBER: "М3111"
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Print User Info
-        run: echo "ФИО: $FULL_NAME, Группа: $GROUP_NUMBER, GitHub: $GITHUB_ACTOR"
+        run: |
+          echo "ФИО: $FULL_NAME, Группа: $GROUP_NUMBER, GitHub: $GITHUB_ACTOR"
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -42,4 +43,5 @@ jobs:
         run: pytest tests/
 
       - name: Lint Code
-        run: flake8 . || black .
+        run: |
+          flake8 . || black .
