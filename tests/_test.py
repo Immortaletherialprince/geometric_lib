@@ -4,7 +4,7 @@ import math
 from calculate import calc
 
 
-sys.path.append('/home/egor/geometric_lib')
+sys.path.append("/home/egor/geometric_lib")
 
 
 def test_calc_circle_area():
