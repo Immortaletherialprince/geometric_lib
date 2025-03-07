@@ -1,10 +1,9 @@
 import pytest
 import sys
 import math
-
-sys.path.append('/home/egor/geometric_lib')
 from calculate import calc
 
+sys.path.append('/home/egor/geometric_lib')
 
 def test_calc_circle_area():
     fig = "circle"
