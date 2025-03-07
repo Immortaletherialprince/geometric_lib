@@ -1,5 +1,5 @@
-import square #need
-import circle #need
+import square # need
+import circle # need
 import sys
 
 figs = ['circle', 'square']
