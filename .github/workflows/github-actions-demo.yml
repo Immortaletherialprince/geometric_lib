@@ -3,6 +3,7 @@ name: CI Pipeline
 on:
   push:
     branches:
+      - tests
       - master
       - release
   pull_request:
@@ -42,6 +43,9 @@ jobs:
           PYTHONPATH: ${{ github.workspace }}
         run: pytest tests/
 
+      - name: Check Code Formatting with black
+        run: black . --check
+
       - name: Lint Code
         run: |
-          flake8 . || black .
+          flake8 .
