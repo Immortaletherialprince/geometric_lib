@@ -1,5 +1,5 @@
-import circle  #  needed for eval() to call circle functions
-import square  #  needed for eval() to call square functions
+import circle  #  needed
+import square  #  needed
 import sys
 
 figs = ["circle", "square"]

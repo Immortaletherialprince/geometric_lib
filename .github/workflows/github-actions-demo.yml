@@ -3,7 +3,6 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - tests
       - master
       - release
   pull_request:
